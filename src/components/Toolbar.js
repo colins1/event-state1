@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 function Toolbar (props) {
     const {filters, selectFilters, onSelectFilter } = props;
+    let styles;
     return(
         <div>
-        <div>{filters.map((filter,i) => <button onClick={() => onSelectFilter(filter)} key={i}>{filter}</button>)}</div>
+        <div>{filters.map((filter,i) => <button style={styles = (selectFilters == filter) ? {backgroundColor: "yellow"} : {backgroundColor: "white"}} onClick={() => onSelectFilter(filter)} key={i}>{filter}</button>)}</div>
         </div>
     )
 }
